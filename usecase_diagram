@@ -1,0 +1,31 @@
+@startuml
+!theme toy
+actor CU
+actor ST
+actor NEW
+actor SP
+
+NEW->(registrasi)
+NEW->(login)
+NEW->(menu utama)
+
+CU->(login)
+CU->(menu utama)
+CU->(tipe treatment)
+CU->(order)
+CU->(submit)
+
+SP->(login)
+SP->(menu utama)
+SP->(mengecek orderan)
+SP->(submit)
+
+ST->(login)
+ST->(menu utama)
+ST->(manajemen)
+ST->(mengecek orderan)
+
+(login)->(menu utama):<<include>>
+(menu utama)->(mengecek orderan):<<include>>
+
+@enduml
